@@ -1,4 +1,4 @@
-#include <ESP8266WiFi.h>
+#include <WiFi.h>
 #include <WebSocketsServer.h>
 #include <motor.h>
 #include <packet.h>
@@ -26,7 +26,7 @@ void InitNetwork(const char *hostname, const char *SSID,
 
   Serial.println(" ");
 
-  // Print ESP8266 IP address
+  // Print IP address
   Serial.print("Connected to WiFi. IP address: ");
   Serial.println(WiFi.localIP());
 
@@ -37,7 +37,6 @@ void InitNetwork(const char *hostname, const char *SSID,
 
 bool LoopSocket()
 {
-  // 
   unsigned long loopStartTime = millis();
 
   webSocket.loop();
